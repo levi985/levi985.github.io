@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Levi Henrique Sales da Silva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos globais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Paleta de cores para os temas */
+        body.dark-mode {
+            background-color: #0D1117;
+            color: #FFFFFF;
+        }
+
+        body.light-mode {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project {
+            background-color: #23272A;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 16px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7289DA;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #5A6FB1;
+            transform: scale(1.05);
+        }
+
+        /* Estilos específicos para o botão de troca de tema */
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .theme-toggle {
+            color: #FFD700; /* Cor do sol no tema escuro */
+        }
+
+        body.light-mode .theme-toggle {
+            color: #1C1C1C; /* Cor da lua no tema claro */
+        }
+
+        /* Mudanças para tema claro */
+        body.light-mode .project {
+            background-color: #f0f0f0;
+            color: #000000;
+        }
+
+        body.light-mode a {
+            background-color: #005f99;
+            color: #ffffff;
+        }
+
+        body.light-mode a:hover {
+            background-color: #007acc;
+        }
+
+        /* Seção de tecnologias */
+        .technologies {
+            margin-top: 20px;
+        }
+
+        .technology-icons i {
+            font-size: 40px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .technology-icons i {
+            color: #ffffff;
+        }
+
+        body.light-mode .technology-icons i {
+            color: #000000;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <button class="theme-toggle" id="theme-toggle">&#9790;</button>
+
+    <div class="container">
+        <h1>Levi Henrique Sales da Silva</h1>
+        <p>Programador em Python, JavaScript, CSS e HTML.</p>
+        <p>Cursando o Segundo Período de Ciência da Computação.</p>
+        <p>Técnico em Desenvolvimento de Sistemas.</p>
+        
+        <h2>Tecnologias</h2>
+        <div class="technologies technology-icons">
+            <i class="fab fa-linux"></i>
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-python"></i>
+            <i class="fab fa-git-alt"></i>
+        </div>
+
+        <h2>Projetos</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Lista de Tarefas</h3>
+                <p>Um aplicativo simples de lista de tarefas para organizar suas tarefas diárias.</p>
+                <a href="https://github.com/levi985/Lista-de-tarefas-" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project">
+                <h3>Conversor de Moedas</h3>
+                <p>Um simples conversor de moedas web.</p>
+                <a href="https://github.com/levi985/conversor-de-moedas" target="_blank">Ver Projeto</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+            toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#9790;' : '&#9728;';
+        });
+    </script>
+</body>
+</html>
