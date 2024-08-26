@@ -4,25 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Levi Henrique Sales da Silva</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Estilos globais */
+        :root {
+            --background-color: #0D1117;
+            --text-color: #ffffff;
+            --primary-color: #7289DA;
+            --secondary-color: #23272A;
+        }
+
+        [data-theme="light"] {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --primary-color: #f5ba13;
+            --secondary-color: #dddddd;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--background-color), var(--secondary-color));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
         }
 
-        /* Paleta de cores para os temas */
-        body.dark-mode {
-            background-color: #0D1117;
-            color: #FFFFFF;
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        body.light-mode {
-            background-color: #FFFFFF;
-            color: #000000;
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--text-color);
         }
 
         .container {
@@ -33,6 +56,14 @@
         h1 {
             font-size: 36px;
             margin-bottom: 10px;
+        }
+
+        .profile-photo img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-top: 20px;
         }
 
         h2 {
@@ -51,13 +82,17 @@
         }
 
         .project {
-            background-color: #23272A;
+            background-color: var(--secondary-color);
             padding: 20px;
             border-radius: 10px;
             margin: 10px 0;
             width: 300px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease-in-out;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
         }
 
         .project h3 {
@@ -72,7 +107,7 @@
         a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #7289DA;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -84,79 +119,36 @@
             transform: scale(1.05);
         }
 
-        /* Estilos específicos para o botão de troca de tema */
-        .theme-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 24px;
-            transition: color 0.3s;
-        }
-
-        body.dark-mode .theme-toggle {
-            color: #FFD700; /* Cor do sol no tema escuro */
-        }
-
-        body.light-mode .theme-toggle {
-            color: #1C1C1C; /* Cor da lua no tema claro */
-        }
-
-        /* Mudanças para tema claro */
-        body.light-mode .project {
-            background-color: #f0f0f0;
-            color: #000000;
-        }
-
-        body.light-mode a {
-            background-color: #005f99;
-            color: #ffffff;
-        }
-
-        body.light-mode a:hover {
-            background-color: #007acc;
-        }
-
-        /* Seção de tecnologias */
-        .technologies {
+        .tech-icons {
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .technology-icons i {
-            font-size: 40px;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        body.dark-mode .technology-icons i {
-            color: #ffffff;
-        }
-
-        body.light-mode .technology-icons i {
-            color: #000000;
+        .tech-icons img {
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
-<body class="dark-mode">
-    <button class="theme-toggle" id="theme-toggle">&#9790;</button>
-
+<body>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
     <div class="container">
         <h1>Levi Henrique Sales da Silva</h1>
-        <p>Programador em Python, JavaScript, CSS e HTML.</p>
-        <p>Cursando o Segundo Período de Ciência da Computação.</p>
-        <p>Técnico em Desenvolvimento de Sistemas.</p>
-        
-        <h2>Tecnologias</h2>
-        <div class="technologies technology-icons">
-            <i class="fab fa-linux"></i>
-            <i class="fab fa-html5"></i>
-            <i class="fab fa-css3-alt"></i>
-            <i class="fab fa-python"></i>
-            <i class="fab fa-git-alt"></i>
+        <div class="profile-photo">
+            <img src="caminho/para/sua/imagem.jpg" alt="Foto de Levi Henrique Sales da Silva">
         </div>
-
+        <p>Programador em Python, JavaScript, CSS e HTML.</p>
+        <p>Cursando o Segundo Periodo Ciência da Computação.</p>
+        <p>Técnico em Desenvolvimento de Sistemas.</p>
+        <div class="tech-icons">
+            <img src="caminho/para/linux-icon.png" alt="Linux">
+            <img src="caminho/para/html-icon.png" alt="HTML">
+            <img src="caminho/para/css-icon.png" alt="CSS">
+            <img src="caminho/para/python-icon.png" alt="Python">
+            <img src="caminho/para/git-icon.png" alt="Git">
+        </div>
         <h2>Projetos</h2>
         <div class="projects">
             <div class="project">
@@ -169,17 +161,25 @@
                 <p>Um simples conversor de moedas web.</p>
                 <a href="https://github.com/levi985/conversor-de-moedas" target="_blank">Ver Projeto</a>
             </div>
+            <div class="project">
+                <h3>Linux Install Script</h3>
+                <p>Script em Shell para instalar programas populares no Linux.</p>
+                <a href="https://github.com/levi985/linux-install-script" target="_blank">Ver Projeto</a>
+            </div>
         </div>
     </div>
-
     <script>
         const toggleButton = document.getElementById('theme-toggle');
         const body = document.body;
 
         toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            body.classList.toggle('light-mode');
-            toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#9790;' : '&#9728;';
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                toggleButton.textContent = '🌙';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                toggleButton.textContent = '☀️';
+            }
         });
     </script>
 </body>
