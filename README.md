@@ -19,7 +19,7 @@ Este é o meu portfólio pessoal, onde apresento meus projetos e tecnologias que
 
 1. **Clone o Repositório**:
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/levi985/levi985.github.io
     ```
 2. **Abra o arquivo `index.html` em seu navegador** para visualizar o portfólio.
 
