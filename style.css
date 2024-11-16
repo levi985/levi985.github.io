@@ -5,7 +5,7 @@
     --secondary-color: #8D99AE;
     --accent-color: #D90429;
     --project-background-color: #3B3E50;
-    --footer-background: #23272A;
+    --footer-background: #23272A; /* Alterado para cinza escuro */
     --footer-text: #ffffff;
 }
 
@@ -15,7 +15,7 @@
     --primary-color: #D90429;
     --secondary-color: #8D99AE;
     --accent-color: #EF233C;
-    --footer-background: #DDDDDD;
+    --footer-background: #DDDDDD; /* Alterado para cinza claro */
     --footer-text: #2B2D42;
     --project-background-color: #E0E0E0;
 }
@@ -63,7 +63,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 20px;
     margin: 50px;
-    flex: 1; /* Ocupa o espaço restante da tela */
+    flex: 1; 
 }
 
 .project {
@@ -119,26 +119,100 @@ a:hover {
 }
 
 footer {
-    background-color: var(--footer-background);
+    background-color: var(--footer-background); /* Atualizado para usar a nova cor */
     padding: 20px 0;
     text-align: center;
     color: var(--footer-text);
-    margin-top: auto; /* Mantém o rodapé ao final da página */
+    margin-top: auto; 
 }
 
 footer a {
-    color: var(--footer-text);
+    color: var(--footer-text); 
     text-decoration: none;
     margin: 0 10px;
+    padding: 0; 
+    background: none; 
+    border: none; 
     transition: color 0.3s;
 }
 
 footer a:hover {
-    color: var(--primary-color);
+    font-weight: bold;
 }
+
 
 .footer-content {
     font-size: 14px;
 }
 
+/* Estilos para o widget do VLibras */
+.vw-text {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    z-index: 9999 !important;
+}
 
+/* Esconder elementos do Google Translate */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+#google_translate_element {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+}
+
+.goog-te-gadget {
+    font-family: inherit !important;
+}
+
+.goog-te-gadget-simple {
+    background-color: transparent !important; /* Remove o fundo vermelho */
+    border: none !important; /* Remove borda desnecessária */
+    color: var(--text-color) !important; /* Alinha o texto com o tema */
+    padding: 5px !important; /* Ajusta o espaçamento */
+    cursor: pointer !important;
+}
+
+.goog-te-gadget-simple:hover {
+    color: var(--primary-color) !important; /* Altera a cor ao passar o mouse */
+}
+
+/* Estilos para VLibras */
+.enabled {
+    position: fixed !important;
+    z-index: 9999 !important;
+}
+
+.access-button {
+    right: 20px !important;
+    bottom: 20px !important;
+}
+
+/* Estilos para Google Translate */
+#google_translate_element {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    font-family: inherit !important;
+}
+
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    color: #333 !important;
+}

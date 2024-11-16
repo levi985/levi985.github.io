@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Levi Henrique</title>
     <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                includedLanguages: 'en,pt',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <!-- Script do VLibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 </head>
 <body>
+
+<!-- Menu de Acessibilidade -->
+     <!-- Elemento do VLibras -->
+     <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <!-- Elemento do Google Translate -->
+    <div id="google_translate_element"></div>
+
+    <!-- Inicialização do VLibras -->
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+
     <button class="theme-toggle" id="theme-toggle">🌙</button>
     <nav>
         <ul>
@@ -21,6 +54,16 @@
         <h1>Bem-vindo ao Portfólio de Levi Henrique</h1>
         <p>Desenvolvedor focado em tecnologias como Python, JavaScript, HTML, e CSS. Veja meus projetos e entre em contato!</p>
     </div>
+
+    <section id="skills">
+        <center><h2>Minhas Linguagens e Ferramentas</h2></center>
+        <div style="text-align: center; margin-top: 20px;">
+            <img src="https://skillicons.dev/icons?i=js,html,css,py,linux,git,docker,mysql,bash" alt="Minhas Skills" style="max-width: 100%; height: auto;">
+          </a>
+        </div>
+      </section>
+      
+    
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Levi Henrique. Todos os direitos reservados.</p>
@@ -34,5 +77,6 @@
     
 
     <script src="script.js"></script>
+
 </body>
 </html>
